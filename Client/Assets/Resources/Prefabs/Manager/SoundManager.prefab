@@ -47,3 +47,5 @@ MonoBehaviour:
   Mixer:
   - {fileID: -269698643892939474, guid: 70b7aed3c6c94034b89e3448f802e9dd, type: 2}
   - {fileID: 2216318438510724990, guid: 70b7aed3c6c94034b89e3448f802e9dd, type: 2}
+  - {fileID: -758772572646548469, guid: 70b7aed3c6c94034b89e3448f802e9dd, type: 2}
+  - {fileID: 155479072784866408, guid: 70b7aed3c6c94034b89e3448f802e9dd, type: 2}
