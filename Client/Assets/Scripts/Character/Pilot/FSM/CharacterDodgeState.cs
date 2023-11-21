@@ -126,4 +126,16 @@ public class CharacterDodgeState : BaseState
         else if (_nextState != eStateType.Idle)
             _nextState = eStateType.Walk;
     }
+
+    public override void PlaySound()
+    {
+        var distance = (DataContainer.AudioListener.position - _stateMachine.Character.transform.position).magnitude;
+        if (distance < 1.0f)
+            distance = 1.0f;
+        else if (distance > 20.0f)
+            return;
+
+        SoundManager.Instance.Play(_stateMachine.Character.AnimationData.DodgeSound, eSoundType.Effect, Random.Range(0.9f, 1.0f),
+            Mathf.Clamp(1 / distance, 0.0f, 1.0f));
+    }
 }

@@ -60,6 +60,8 @@ public class SoundManager : CustomSingleton<SoundManager>
                 break;
             case eSoundType.Effect:
                 audioSource = _audioSources[(int)eSoundType.Effect];
+                if (audioSource.isPlaying)
+                    audioSource.Stop();
                 audioSource.pitch = pitch;
                 audioSource.volume = volume;
                 audioSource.PlayOneShot(audioClip);
