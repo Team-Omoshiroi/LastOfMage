@@ -222,7 +222,8 @@ public class NPCAIController : MonoBehaviour
     private void SearchState()
     {
         viewDirection = new Vector2(agent.velocity.x, agent.velocity.z);
-        aimDirection = new Vector2(target.transform.position.x - this.transform.position.x, target.transform.position.z - this.transform.position.z);
+
+        if (target != null) { aimDirection = new Vector2(target.transform.position.x - this.transform.position.x, target.transform.position.z - this.transform.position.z); }
         
         input.CallRunEvent(isRun);
 
