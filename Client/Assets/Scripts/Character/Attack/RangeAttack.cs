@@ -13,6 +13,9 @@ public class RangeAttack : BaseAttack
     [SerializeField]
     private float lifeTime = 5f; // 공격이 존재할 수 있는 시간
 
+    [SerializeField]
+    private AudioClip hitSound; // 공격이 맞았을 때 나는 소리
+
     int APDatar;
     Vector3 impact;
 
@@ -85,6 +88,15 @@ public class RangeAttack : BaseAttack
     {
         // Debug.Log("피격전 체력:"+healthSystem.stats.Hp);
         // Debug.Log("피격후 체력:"+healthSystem.stats.Hp);
+        var distance = (DataContainer.AudioListener.position - transform.position).magnitude;
+        eSoundType type = eSoundType.OtherEffect;
+        if (distance < 1.0f)
+        {
+            distance = 1.0f;
+            type = eSoundType.PlayerEffect;
+            SoundManager.Instance.Play(hitSound, type, Random.Range(0.9f, 1.0f), 1 / distance);
+        }
+        
         if (healthSystem.TakeDamage(APDatar))
         {
             gameObject.SetActive(false);

@@ -18,9 +18,9 @@ TagManager:
   - Object
   - Ground
   - Wall
-  - character
   - 
-  - 
+  - Stone
+  - Grass
   - 
   - 
   - Character

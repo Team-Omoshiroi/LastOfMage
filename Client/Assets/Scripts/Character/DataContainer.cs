@@ -27,4 +27,6 @@ public class DataContainer : MonoBehaviour
 
     //[field: SerializeField]
     public SyncModule SyncModule { get; protected set; }
+
+    public static Transform AudioListener { get; protected set; }
 }

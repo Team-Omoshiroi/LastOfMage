@@ -31,6 +31,8 @@ public class CharacterDataContainer : DataContainer
         Health = GetComponent<HealthSystem>();
 
         AnimationData.Initialize();
+
+        AudioListener = transform;
     }
 
     private void Start()
@@ -74,5 +76,10 @@ public class CharacterDataContainer : DataContainer
         Gizmos.color = Color.red;
 
         Gizmos.DrawRay(downRay);
+    }
+
+    public void PlaySound()
+    {
+        stateMachine.PlaySound();
     }
 }

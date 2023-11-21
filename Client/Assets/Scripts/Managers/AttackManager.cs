@@ -14,7 +14,6 @@ public class PoolObj
 
 public class AttackManager : CustomSingleton<AttackManager>
 {
-
     // 오브젝트 풀을 위한 큐
     private Dictionary<eAttackType, Queue<GameObject>> PoolsDic = new Dictionary<eAttackType, Queue<GameObject>>();
     //private Queue<GameObject> attackPool = new Queue<GameObject>();

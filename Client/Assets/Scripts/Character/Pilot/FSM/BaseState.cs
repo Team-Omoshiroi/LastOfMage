@@ -9,7 +9,10 @@ public class BaseState : IState
     {
         _stateMachine = stateMachine;
     }
+    public virtual void PlaySound()
+    {
 
+    }
     public virtual void Enter()
     {
         AddInputActionsCallbacks();
@@ -274,5 +277,10 @@ public class CloneBaseState : IState
     {
         var state = animator.GetCurrentAnimatorStateInfo(layer);
         animator.Play(state.fullPathHash, layer, normalizeTime);
+    }
+
+    public virtual void PlaySound()
+    {
+        
     }
 }
