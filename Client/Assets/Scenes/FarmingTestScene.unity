@@ -15556,6 +15556,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldObjectSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8373057905279703864, guid: 5492cc15f7cf73a48997a28cb85465b2, type: 3}
+      propertyPath: BtnCancel
+      value: 
+      objectReference: {fileID: 293826151}
+    - target: {fileID: 8373057905279703864, guid: 5492cc15f7cf73a48997a28cb85465b2, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 618570518}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
