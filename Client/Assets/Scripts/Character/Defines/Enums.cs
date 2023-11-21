@@ -65,7 +65,9 @@ public enum eAIStateType
 public enum eSoundType
 {
     Bgm,
-    Effect,
+    PlayerEffect,
+    OtherEffect,
+    Ambient,
     MaxCount
 }
 

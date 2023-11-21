@@ -25,7 +25,7 @@ MonoBehaviour:
     <AttackInfos>k__BackingField:
     - <AttackName>k__BackingField: FireBall
       <AttackType>k__BackingField: 101
-      <AttackSound>k__BackingField: {fileID: 8300000, guid: e30717f4bef3e9c479fece53b68f6fa0, type: 3}
+      <AttackSound>k__BackingField: {fileID: 8300000, guid: b1a9ddf6eaca1694786f113a0606dde0, type: 3}
       <ComboStateIndex>k__BackingField: 0
       <ComboTransitionTime>k__BackingField: 0.1
       <ForceTransitionTime>k__BackingField: 0.5

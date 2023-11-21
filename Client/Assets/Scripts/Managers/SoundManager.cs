@@ -58,8 +58,9 @@ public class SoundManager : CustomSingleton<SoundManager>
                 audioSource.clip = audioClip;
                 audioSource.Play();
                 break;
-            case eSoundType.Effect:
-                audioSource = _audioSources[(int)eSoundType.Effect];
+            case eSoundType.PlayerEffect:
+            case eSoundType.OtherEffect:
+                audioSource = _audioSources[(int)type];
                 if (audioSource.isPlaying)
                     audioSource.Stop();
                 audioSource.pitch = pitch;
@@ -103,8 +104,9 @@ public class SoundManager : CustomSingleton<SoundManager>
                 AudioSource bgmAudioSource = _audioSources[(int)eSoundType.Bgm];
                 bgmAudioSource.volume = volume;
                 break;
-            case eSoundType.Effect:
-                AudioSource effectAudioSource = _audioSources[(int)eSoundType.Effect];
+            case eSoundType.PlayerEffect:
+            case eSoundType.OtherEffect:
+                AudioSource effectAudioSource = _audioSources[(int)type];
                 effectAudioSource.volume = volume;
                 break;
         }

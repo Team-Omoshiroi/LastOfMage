@@ -100,7 +100,7 @@ public class UIOption : UIBase
 
     public void EffectSound(Single set)
     {
-        SoundManager.Instance?.VolumeSetting(eSoundType.Effect, set / 5.0f);
+        SoundManager.Instance?.VolumeSetting(eSoundType.PlayerEffect, set / 5.0f);
     }
     public void BGMSound(Single set)
     {

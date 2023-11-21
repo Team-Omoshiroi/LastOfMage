@@ -1237,6 +1237,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 254c5a4ae3deabc4e9331b0b78cd8877, type: 3}
     - {fileID: 8300000, guid: 1f99bc5cebd50d84faa231db0efde128, type: 3}
     - {fileID: 8300000, guid: 6a908757d0a51964cacf1479b644d99a, type: 3}
+    <DodgeSound>k__BackingField: {fileID: 8300000, guid: 9475fa660bdc596469935228de714f7e, type: 3}
   <SpriteRotator>k__BackingField:
     _main: {fileID: 3331291140637838908}
     _weapon: {fileID: 7909343574846182647}
