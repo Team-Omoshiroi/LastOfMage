@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ItemEffect/AddHP")]
 public  class EdibleItemSo : BaseItem, IDestroyableItem, IItemAction
 {
     [SerializeField]

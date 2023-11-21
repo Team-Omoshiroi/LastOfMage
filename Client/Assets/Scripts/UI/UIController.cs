@@ -62,6 +62,10 @@ public class UIController: MonoBehaviour
             Debug.LogError("NullGameOver");
         }
     }
+    public void  UIDie()
+    {
+        GameOver.SetActive(true);
+    }
 
     public  void HandlerHp(float MaxHp ,float CurHp)
     {

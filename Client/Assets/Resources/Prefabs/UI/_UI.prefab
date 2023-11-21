@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpBar: {fileID: 2435527604412065384}
-  BtnLeavGame: {fileID: 0}
-  GameOver: {fileID: 0}
+  BtnLeavGame: {fileID: 7320615802352751685}
+  GameOver: {fileID: 3938656410297389635}
   UIRoot: {fileID: 4451744114395914123}
   BtnInventory: {fileID: 2375037505491688633}
   BtnCancel: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 8564596019835938972}
   - component: {fileID: 2165026001687444325}
   - component: {fileID: 3068310076732850500}
-  - component: {fileID: 7393123202622227156}
+  - component: {fileID: 7038481359370004358}
   m_Layer: 5
   m_Name: UIDie
   m_TagString: Untagged
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &7393123202622227156
+--- !u!95 &7038481359370004358
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

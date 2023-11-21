@@ -23,3 +23,5 @@ MonoBehaviour:
   modifiersData:
   - statModifier: {fileID: 11400000, guid: d74f311619209a94f88f5eb126308738, type: 2}
     value: 10
+  - statModifier: {fileID: 11400000, guid: 69b74638b430a2a468e2629d6491acd0, type: 2}
+    value: 10

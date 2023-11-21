@@ -9,7 +9,7 @@ public class UIStore : MonoBehaviour
     [SerializeField] private RectTransform PopupRoot;
   
 
-   [SerializeField] private Button BtnWeapone1Ghacha;
+    [SerializeField] private Button BtnWeapone1Ghacha;
     [SerializeField] private Button BtnWeapone10Ghacha;
     [SerializeField] private Button BtnMagic1Ghacha;
     [SerializeField] private Button BtnMagic10Ghacha;
