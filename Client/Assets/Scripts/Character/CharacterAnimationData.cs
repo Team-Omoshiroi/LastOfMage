@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -18,6 +19,10 @@ public class CharacterAnimationData
     [SerializeField] private string comboAttackParameterName = "ComboAttack";
     [SerializeField] private string comboIndexParameterName = "Combo";
     public LayerMask GroundLayer;
+    public LayerMask StoneLayer;
+    [field: SerializeField] public List<AudioClip> StepOnStone { get; private set; }
+    public LayerMask GrassLayer;
+    [field: SerializeField] public List<AudioClip> StepOnGrass { get; private set; }
 
     public int GroundParameterHash { get; private set; }
     public int IdleParameterHash { get; private set; }

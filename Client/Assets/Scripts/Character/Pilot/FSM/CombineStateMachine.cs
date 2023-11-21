@@ -62,4 +62,10 @@ public class CombineStateMachine
     {
         return _stateMachine[layer].currentStateType;
     }
+
+    public void PlaySound()
+    {
+        foreach (var stateMachine in _stateMachine)
+            stateMachine.PlaySound();
+    }
 }

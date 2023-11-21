@@ -38,4 +38,9 @@ public abstract class StateMachine
     {
         States.Add(statetype, state);
     }
+
+    public void PlaySound()
+    {
+        _currentState?.PlaySound();
+    }
 }

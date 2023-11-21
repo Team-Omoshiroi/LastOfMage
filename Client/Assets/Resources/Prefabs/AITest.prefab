@@ -1222,7 +1222,21 @@ MonoBehaviour:
     comboIndexParameterName: Combo
     GroundLayer:
       serializedVersion: 2
-      m_Bits: 896
+      m_Bits: 7040
+    StoneLayer:
+      serializedVersion: 2
+      m_Bits: 2048
+    <StepOnStone>k__BackingField:
+    - {fileID: 8300000, guid: 5f31067ece350dc4b9bec6481b69ca93, type: 3}
+    - {fileID: 8300000, guid: 98e6bef7f314541429da38ed9f1e2967, type: 3}
+    - {fileID: 8300000, guid: 22ed88d4abae28c4482b89a1c79da8a3, type: 3}
+    GrassLayer:
+      serializedVersion: 2
+      m_Bits: 4096
+    <StepOnGrass>k__BackingField:
+    - {fileID: 8300000, guid: 254c5a4ae3deabc4e9331b0b78cd8877, type: 3}
+    - {fileID: 8300000, guid: 1f99bc5cebd50d84faa231db0efde128, type: 3}
+    - {fileID: 8300000, guid: 6a908757d0a51964cacf1479b644d99a, type: 3}
   <SpriteRotator>k__BackingField:
     _main: {fileID: 3331291140637838908}
     _weapon: {fileID: 7909343574846182647}
@@ -1259,6 +1273,7 @@ MonoBehaviour:
   attackDistance: 5
   attackDelay: 1
   searchTime: 3
+  runawayTime: 3
 --- !u!114 &4615923822048474000
 MonoBehaviour:
   m_ObjectHideFlags: 0

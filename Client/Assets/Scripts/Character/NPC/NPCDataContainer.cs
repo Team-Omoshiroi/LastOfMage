@@ -120,4 +120,9 @@ public class NPCDataContainer : DataContainer
     //{
     //    return Vector3.Angle(transform.position - PlayerController.instance.transform.position, transform.position + targetPos);
     //}
+
+    public void PlaySound()
+    {
+        stateMachine.PlaySound();
+    }
 }

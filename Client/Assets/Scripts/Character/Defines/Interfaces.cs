@@ -35,6 +35,7 @@ public interface IState
     public void Update();
     public void PhysicsUpdate();
     public void SetAnimation(Animator animator, int layer, float normalizeTime);
+    public void PlaySound();
 }
 
 

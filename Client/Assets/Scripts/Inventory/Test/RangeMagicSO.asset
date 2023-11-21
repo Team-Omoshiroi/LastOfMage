@@ -16,18 +16,17 @@ MonoBehaviour:
   objectPrefab: {fileID: 0}
   itemID: 100003
   itemName: FireBall
-  description: Fire
+  itemDescription: 
   itemType: 2
-  maxStack: 1
+  itemMaxStack: 0
   isStackable: 1
   range: 0
   attackData:
     <AttackInfos>k__BackingField:
     - <AttackName>k__BackingField: FireBall
       <AttackType>k__BackingField: 101
+      <AttackSound>k__BackingField: {fileID: 8300000, guid: e30717f4bef3e9c479fece53b68f6fa0, type: 3}
       <ComboStateIndex>k__BackingField: 0
       <ComboTransitionTime>k__BackingField: 0.1
       <ForceTransitionTime>k__BackingField: 0.5
       <Force>k__BackingField: 1
-      <Damage>k__BackingField: 0
-      <Anime>k__BackingField: {fileID: 0}
