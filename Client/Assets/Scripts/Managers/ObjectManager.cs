@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObjectManager : CustomSingleton<ObjectManager>
 {
     public PilotSync pilotSync { get; set; }
+    public CharacterStats characterStats { get; set; }
     readonly Dictionary<int, GameObject> _objects = new();
 
     public static GameObjectType GetObjectTypeById(int id)
@@ -41,7 +42,18 @@ public class ObjectManager : CustomSingleton<ObjectManager>
                 pilotSync.PosInfo = info.PosInfo;
                 pilotSync.StatInfo = info.StatInfo;
                 pilotSync.State = info.State;
-                pilotSync.InitCharacterStats();
+
+                characterStats = gameObject.GetComponent<DataContainer>().Stats;
+                characterStats.Level = info.StatInfo.Level;
+                characterStats.MaxHp = info.StatInfo.MaxHp;
+                characterStats.Hp = info.StatInfo.Hp;
+                characterStats.Def = 1;
+                characterStats.AtkSpeed = 1;
+                characterStats.Atk = info.StatInfo.Attack;
+                characterStats.CritRate = 1;
+                characterStats.CritDamage = 1;
+                characterStats.MoveSpeed = info.StatInfo.Speed;
+                characterStats.RunMultiplier = 2;
             }
             else
             {
@@ -63,7 +75,18 @@ public class ObjectManager : CustomSingleton<ObjectManager>
                 cloneSync.PosInfo = info.PosInfo;
                 cloneSync.StatInfo = info.StatInfo;
                 cloneSync.State = info.State;
-                cloneSync.InitCharacterStats();
+
+                characterStats = gameObject.GetComponent<DataContainer>().Stats;
+                characterStats.Level = info.StatInfo.Level;
+                characterStats.MaxHp = info.StatInfo.MaxHp;
+                characterStats.Hp = info.StatInfo.Hp;
+                characterStats.Def = 1;
+                characterStats.AtkSpeed = 1;
+                characterStats.Atk = info.StatInfo.Attack;
+                characterStats.CritRate = 1;
+                characterStats.CritDamage = 1;
+                characterStats.MoveSpeed = info.StatInfo.Speed;
+                characterStats.RunMultiplier = 2;
                 cloneSync.CallMoveEvent(cloneSync.State, cloneSync.PosInfo, cloneSync.VelInfo);
             }
         }
