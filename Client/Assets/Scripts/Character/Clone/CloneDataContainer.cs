@@ -33,4 +33,9 @@ public class CloneDataContainer : DataContainer
         _stateMachine = new CombineCloneStatemachine(this);
         SpriteRotator.Register(this);
     }
+
+    public void PlaySound()
+    {
+        _stateMachine.PlaySound();
+    }
 }
