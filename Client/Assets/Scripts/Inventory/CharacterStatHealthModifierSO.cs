@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "ItemEffect/AddHP")]
 public class CharacterStatHealthModifierSO : CharacterStatModifierSO
 {
     public override void AffectCharacter(GameObject character, float val)
@@ -11,7 +11,7 @@ public class CharacterStatHealthModifierSO : CharacterStatModifierSO
         if (health != null)
         {
             Debug.Log("회복!");
-            health.TakeRecovery(10);
+            health.TakeRecovery((int)val);
         }
         else
         {
