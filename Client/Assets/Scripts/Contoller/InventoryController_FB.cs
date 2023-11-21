@@ -28,6 +28,8 @@ namespace Inventory
 		private Action OnOpened;
 		private Action OnClosed;
 
+        private GameObject character;
+
 		UIInventoryPage_FB _inventorypage_FB;
 		PlayerInput playerInput;
 
@@ -41,6 +43,8 @@ namespace Inventory
 
 			BtnCancel.onClick.AddListener(() => CloseInventoryUI());
 			BtnCancel.onClick.AddListener(() => OnClosed?.Invoke());
+
+            character = GameObject.FindWithTag("Pilot");
 		}
 
 		/// <summary>
@@ -128,6 +132,7 @@ namespace Inventory
 			if (inventoryItem.IsEmpty)
 				return;
 		}
+
 		private void DropItem(int itemIndex, int quantity)
 		{
 			inventoryData_merged.RemoveItem(itemIndex, quantity);
@@ -143,7 +148,7 @@ namespace Inventory
 			IItemAction itemAction = inventoryItem.item as IItemAction;
 			if (itemAction != null)
 			{
-				itemAction.PerformAction(gameObject);
+				itemAction.PerformAction(character);
 
 				if (inventoryData_merged.GetItemAt(itemIndex).IsEmpty)
 				{
