@@ -43,6 +43,8 @@ public class ObjectManager : CustomSingleton<ObjectManager>
                 pilotSync.StatInfo = info.StatInfo;
                 pilotSync.State = info.State;
 
+                // CharacterStats를 정상적으로 찾지 못함
+                // pilotSync.InitCharacterStats()를 찾을 수 있도록 해야 함
                 characterStats = gameObject.GetComponent<DataContainer>().Stats;
                 characterStats.Level = info.StatInfo.Level;
                 characterStats.MaxHp = info.StatInfo.MaxHp;
@@ -76,6 +78,8 @@ public class ObjectManager : CustomSingleton<ObjectManager>
                 cloneSync.StatInfo = info.StatInfo;
                 cloneSync.State = info.State;
 
+                // CharacterStats를 정상적으로 찾지 못함
+                // pilotSync.InitCharacterStats()를 찾을 수 있도록 해야 함
                 characterStats = gameObject.GetComponent<DataContainer>().Stats;
                 characterStats.Level = info.StatInfo.Level;
                 characterStats.MaxHp = info.StatInfo.MaxHp;
