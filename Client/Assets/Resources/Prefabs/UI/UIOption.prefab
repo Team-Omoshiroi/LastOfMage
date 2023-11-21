@@ -1018,6 +1018,11 @@ MonoBehaviour:
   _Language:
   - {fileID: 7693780981557465493}
   - {fileID: 358207189710172704}
+  Confirm: {fileID: 8300000, guid: 2af35551c6fb2624a897b9151f0b90bc, type: 3}
+  Cancel: {fileID: 8300000, guid: 74a4f6f735cd890428710e3c621ec2e6, type: 3}
+  BGMTest: {fileID: 8300000, guid: 3bb56bc398ecffc409c2bce7b94b492b, type: 3}
+  EffectTest: {fileID: 8300000, guid: 9475fa660bdc596469935228de714f7e, type: 3}
+  AmbientTest: {fileID: 8300000, guid: 746bb21166ba43c4da56a248a4153263, type: 3}
 --- !u!1 &2962637662707132333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2293,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4733996162086986445}
         m_TargetAssemblyTypeName: UIBase, Assembly-CSharp
         m_MethodName: HideUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4733996162086986445}
+        m_TargetAssemblyTypeName: UIOption, Assembly-CSharp
+        m_MethodName: PlayCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
