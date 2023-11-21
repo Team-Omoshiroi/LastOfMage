@@ -53,7 +53,6 @@ public class SoundManager : CustomSingleton<SoundManager>
                 audioSource = _audioSources[(int)eSoundType.Bgm];
                 if (audioSource.isPlaying)
                     audioSource.Stop();
-
                 audioSource.pitch = pitch;
                 audioSource.volume = volume;
                 audioSource.clip = audioClip;
