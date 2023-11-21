@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6059025890383672944}
-  m_LocalRotation: {x: 0.3257847, y: -0, z: -0, w: 0.945444}
+  m_LocalRotation: {x: 0.32578266, y: 0, z: 0, w: 0.9454447}
   m_LocalPosition: {x: -3.31, y: 1.24, z: 0.97}
-  m_LocalScale: {x: 0.18480101, y: 0.18480101, z: 0.18480101}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 38.026, y: 0, z: 0}
 --- !u!212 &5036495776135786433
 SpriteRenderer:
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd2fab066ea7d214191f2e18b95ef87c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4767f548b169934aa4cd57008a057ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,8 +105,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.83
-  m_Height: 4.65
+  m_Radius: 0.25
+  m_Height: 0.48
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8951706027627236605
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1c0b9f6a5852046a1f71afd7f01af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 3d63bdf0459f06740bd0e3c0f572a064, type: 2}
-  <Quantity>k__BackingField: 4
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: a91704384a7c041439e228f0fce8441f, type: 2}
+  <Quantity>k__BackingField: 12
   duration: 0.3
