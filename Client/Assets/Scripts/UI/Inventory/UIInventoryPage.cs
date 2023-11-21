@@ -184,4 +184,9 @@ public class UIInventoryPage : UIBase
         actionPanel.Toggle(false);
         ResetDraggtedItem();
     }
+
+    internal void AddAction(string v1, object v2)
+    {
+        throw new NotImplementedException();
+    }
 }
