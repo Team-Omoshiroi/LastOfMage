@@ -16,6 +16,7 @@ public  class EdibleItemSo : BaseItem, IDestroyableItem, IItemAction
     {
 
         Debug.Log("소비템");
+        SoundManager.Instance.Play("Effect/8-bit 16-bit Sound Effects/Confirm 1", eSoundType.PlayerEffect);
         foreach (ModifierData data in modifiersData)
         {
             data.statModifier.AffectCharacter(character, data.value);

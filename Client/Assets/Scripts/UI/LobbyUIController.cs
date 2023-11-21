@@ -23,14 +23,23 @@ public class LobbyUIController : MonoBehaviour
         for (int i = 1; i < UIPage.Length; i++)
         {
             SetActiveWithCheck(UIPage[i], false);
+           
         }
     }
 
     public void ChangePage(int numBtn)
     {
+        if (numBtn == 0)
+        {
+            SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-cancel-1",eSoundType.PlayerEffect);
+        }
+        else
+        {
+            SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
+        }
         for (int i = 0; i < UIPage.Length; i++)
         {         
-                MoveUIPage(numBtn, i);      
+            MoveUIPage(numBtn, i);           
         }
 
     }
@@ -39,6 +48,8 @@ public class LobbyUIController : MonoBehaviour
     private void MoveUIPage(int numOpenPage,int numClosePage)
     {
         ToggleUI(() => ChangeUIState(UIPage[numOpenPage], UIPage[numClosePage])); 
+     
+      
     }
 
     // 로딩 화면을 토글하고 UI 액션 수행
@@ -75,11 +86,10 @@ public class LobbyUIController : MonoBehaviour
     }
 
 
-
-
     public void LoadBTG()
     {
         LoadingScenController.LoadScene("BattleGroundScene");
+        SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
     }
 }
 
