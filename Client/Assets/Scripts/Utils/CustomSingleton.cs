@@ -21,13 +21,13 @@ public class CustomSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
                 if (m_Instance == null)
                 {
-                    GameObject singletonObject = new GameObject { name = "@" + typeof(T).ToString() };
+                    GameObject singletonObject = new() { name = "@" + typeof(T).ToString() };
                     m_Instance = singletonObject.AddComponent<T>();
-
-                    DontDestroyOnLoad(singletonObject);
                 }
                 else
+                {
                     DontDestroyOnLoad(m_Instance);
+                }
             }
 
             return m_Instance;

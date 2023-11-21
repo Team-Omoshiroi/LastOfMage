@@ -71,7 +71,7 @@ public class NPCDataContainer : DataContainer
         }
 
         SpriteRotator.Register(this);
-        Health.OnDead += () => { isDead = true; Instantiate(dropItem); Debug.Log("사망 상태. 더이상 상태를 갱신하지 않음."); };
+        Health.OnDead += () => { isDead = true; Instantiate(dropItem); Debug.Log("사망 상태. 더이상 상태를 갱신하지 않음."); NPCAI.OnDead(); };
 
         Health.IsDodge = SetDodge;
     }

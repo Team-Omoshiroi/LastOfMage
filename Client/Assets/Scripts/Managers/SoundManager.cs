@@ -57,11 +57,10 @@ public class SoundManager : CustomSingleton<SoundManager>
         {
             case eSoundType.Ambient:
             case eSoundType.Bgm:
-                audioSource = _audioSources[(int)eSoundType.Bgm];
+                audioSource = _audioSources[(int)type];
                 if (audioSource.isPlaying)
                     audioSource.Stop();
                 audioSource.pitch = pitch;
-                audioSource.volume = volume;
                 audioSource.clip = audioClip;
                 audioSource.Play();
                 break;
@@ -71,7 +70,6 @@ public class SoundManager : CustomSingleton<SoundManager>
                 if (audioSource.isPlaying)
                     audioSource.Stop();
                 audioSource.pitch = pitch;
-                audioSource.volume = volume;
                 audioSource.PlayOneShot(audioClip);
                 break;
         }
@@ -105,18 +103,8 @@ public class SoundManager : CustomSingleton<SoundManager>
 
     public void VolumeSetting(eSoundType type, float volume)
     {
-        switch (type)
-        {
-            case eSoundType.Bgm:
-                AudioSource bgmAudioSource = _audioSources[(int)eSoundType.Bgm];
-                bgmAudioSource.volume = volume;
-                break;
-            case eSoundType.PlayerEffect:
-            case eSoundType.OtherEffect:
-                AudioSource effectAudioSource = _audioSources[(int)type];
-                effectAudioSource.volume = volume;
-                break;
-        }
+        AudioSource effectAudioSource = _audioSources[(int)type];
+        effectAudioSource.volume = volume;
     }
 
     void OnDestroy()

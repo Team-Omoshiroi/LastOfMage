@@ -175,11 +175,12 @@ public class NPCAIController : MonoBehaviour
         input.CallRunEvent(isRun);
 
         if (!isRun) { isRun = true; }
-        
+
         //추적 대상이 추적 범위를 벗어났다면 배회 상태로 전환
         if (Vector3.Distance(transform.position, curDestination) > chaseDistance)
         {
             SetWanderState();
+            ChangeBGM();
             return;
         }
 
@@ -281,6 +282,7 @@ public class NPCAIController : MonoBehaviour
         target = enemy;
         agent.speed = moveSpeed * stats.RunMultiplier;
         aiState = eAIStateType.Chase;
+        ChangeBGM();
     }
 
     private void SetAttackState(GameObject enemy)
@@ -294,6 +296,7 @@ public class NPCAIController : MonoBehaviour
     {
         if(target == null)
         {
+
             collider.radius = maxDetectRadius;
             agent.speed = moveSpeed * stats.RunMultiplier;
             int index = Random.Range(0, WanderDestinations.Count);
@@ -357,6 +360,14 @@ public class NPCAIController : MonoBehaviour
         }
     } 
 
+    public void OnDead()
+    {
+        if (aiState == eAIStateType.Chase || aiState == eAIStateType.Attack)
+        {
+            SoundManager.Instance.Play("Effect/Minifantasy_Forgotten_Plains_SFX/14_Wind_loop", eSoundType.Ambient);
+        }
+    }
+
     /// <summary>
     /// 현재 목적지에 매우 근접했다면 true, 아니면 false
     /// </summary>
@@ -368,5 +379,17 @@ public class NPCAIController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void ChangeBGM()
+    {
+        if(aiState == eAIStateType.Chase)
+        {
+            SoundManager.Instance.Play("Effect/Shapeforms Audio Free Sound Effects/Dystopia – Ambience and Drone Preview/AUDIO/AMBIENCE_HEARTBEAT_LOOP", eSoundType.Ambient);
+        }
+        else
+        {
+            SoundManager.Instance.Play("Effect/Minifantasy_Forgotten_Plains_SFX/14_Wind_loop", eSoundType.Ambient);
+        }
     }
 }
