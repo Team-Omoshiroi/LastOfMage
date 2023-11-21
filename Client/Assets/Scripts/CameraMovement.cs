@@ -32,7 +32,8 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, _target.position + _offset, ref _dampingVelocity, 1 / Speed);
+        if (_target != null)
+            transform.position = Vector3.SmoothDamp(transform.position, _target.position + _offset, ref _dampingVelocity, 1 / Speed);
     }
 
     private void OnDestroy()
