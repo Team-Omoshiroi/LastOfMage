@@ -56,6 +56,7 @@ public class CharacterDataContainer : DataContainer
             Stats.SetCharacterStats(TestStats.BaseHP, TestStats.BaseHP, TestStats.BaseDEF, TestStats.BaseAttackSpeed, TestStats.BaseAttackPower,
                 TestStats.BaseCriticalRate, TestStats.BaseCriticalPower, TestStats.BaseMoveSpeed, TestStats.BaseRunMultiplier);
         }
+        Health.OnDead += UIController.Instance.UIDie;
     }
 
     void Update()
