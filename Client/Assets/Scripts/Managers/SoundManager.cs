@@ -57,11 +57,10 @@ public class SoundManager : CustomSingleton<SoundManager>
         {
             case eSoundType.Ambient:
             case eSoundType.Bgm:
-                audioSource = _audioSources[(int)eSoundType.Bgm];
+                audioSource = _audioSources[(int)type];
                 if (audioSource.isPlaying)
                     audioSource.Stop();
                 audioSource.pitch = pitch;
-                //audioSource.volume = volume;
                 audioSource.clip = audioClip;
                 audioSource.Play();
                 break;
@@ -71,7 +70,6 @@ public class SoundManager : CustomSingleton<SoundManager>
                 if (audioSource.isPlaying)
                     audioSource.Stop();
                 audioSource.pitch = pitch;
-                //audioSource.volume = volume;
                 audioSource.PlayOneShot(audioClip);
                 break;
         }
