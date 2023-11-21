@@ -23,6 +23,7 @@ public class SoundManager : CustomSingleton<SoundManager>
         }
 
         _audioSources[(int)eSoundType.Bgm].loop = true;
+        _audioSources[(int)eSoundType.Ambient].loop = true;
     }
 
     public void Clear()
@@ -34,7 +35,12 @@ public class SoundManager : CustomSingleton<SoundManager>
         }
         _audioClips.Clear();
     }
-
+    public void Stop(eSoundType type)
+    {
+        AudioSource audio = _audioSources[(int)type];
+        if (audio.isPlaying)
+            audio.Stop();
+    }
     public void Play(string path, eSoundType type = eSoundType.Bgm, float pitch = 1.0f, float volume = 1.0f)
     {
         AudioClip audioClip = GetOrAddAudioClip(path, type);
@@ -49,6 +55,7 @@ public class SoundManager : CustomSingleton<SoundManager>
         AudioSource audioSource;
         switch (type)
         {
+            case eSoundType.Ambient:
             case eSoundType.Bgm:
                 audioSource = _audioSources[(int)eSoundType.Bgm];
                 if (audioSource.isPlaying)
@@ -110,5 +117,10 @@ public class SoundManager : CustomSingleton<SoundManager>
                 effectAudioSource.volume = volume;
                 break;
         }
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Check");
     }
 }

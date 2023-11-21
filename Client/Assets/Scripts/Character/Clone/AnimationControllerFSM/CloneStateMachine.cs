@@ -158,4 +158,10 @@ public class CombineCloneStatemachine
         if (_stateMachine[1].currentStateType != eStateType.Aim)
             ChangeState(eStateType.Aim);
     }
+
+    public void PlaySound()
+    {
+        foreach (var stateMachine in _stateMachine)
+            stateMachine.CurrentState.PlaySound();
+    }
 }
