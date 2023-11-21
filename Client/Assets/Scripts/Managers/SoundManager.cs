@@ -118,4 +118,9 @@ public class SoundManager : CustomSingleton<SoundManager>
                 break;
         }
     }
+
+    void OnDestroy()
+    {
+        Debug.Log("Check");
+    }
 }
