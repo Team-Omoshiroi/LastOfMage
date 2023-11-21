@@ -35,7 +35,12 @@ public class SoundManager : CustomSingleton<SoundManager>
         }
         _audioClips.Clear();
     }
-
+    public void Stop(eSoundType type)
+    {
+        AudioSource audio = _audioSources[(int)type];
+        if (audio.isPlaying)
+            audio.Stop();
+    }
     public void Play(string path, eSoundType type = eSoundType.Bgm, float pitch = 1.0f, float volume = 1.0f)
     {
         AudioClip audioClip = GetOrAddAudioClip(path, type);
