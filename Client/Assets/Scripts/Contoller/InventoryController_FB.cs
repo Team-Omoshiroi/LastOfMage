@@ -234,7 +234,7 @@ namespace Inventory
 		{
 			if (inventoryUI.isActiveAndEnabled == false)
 			{
-				PrepareMergedSO();
+                PrepareMergedSO();
 
 				//playerInput.CanControl = false;
 				foreach (var item in inventoryData_player.GetCurrentInventoryState())

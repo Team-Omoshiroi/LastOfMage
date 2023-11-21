@@ -40,7 +40,11 @@ public class FarmingBox : BattleFieldObject, ILootable, IInteractable, IPointerD
     public Action OnOpened;
     public Action OnClosed;
 
-    private void Awake() { }
+    private void Awake()
+    {
+        OnOpened = () => SoundManager.Instance.Play("Effect/Shapeforms Audio Free Sound Effects/The Mint – Coins and Money Preview/AUDIO/Coins in Sack Dropped on Soft Surface", eSoundType.PlayerEffect);
+        OnClosed = () => SoundManager.Instance.Play("Effect/Shapeforms Audio Free Sound Effects/The Mint – Coins and Money Preview/AUDIO/Coins In Sack Dropped on Wood", eSoundType.PlayerEffect);
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -56,6 +60,7 @@ public class FarmingBox : BattleFieldObject, ILootable, IInteractable, IPointerD
 
         inventoryController = GetComponent<InventoryController_FB>();
         farmingBoxCollider = GetComponent<Collider>();
+        
     }
 
     /// <summary>
