@@ -31,6 +31,7 @@ public class UIStorePopup : UIBase
 
     void Confirm()
     {
+        SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
         if (OnConfirm != null)
         {
             OnConfirm();
@@ -42,6 +43,7 @@ public class UIStorePopup : UIBase
 
     void Close()
     {
+        SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-cancel-1", eSoundType.PlayerEffect);
         gameObject.SetActive(false);
     }
 
