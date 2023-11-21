@@ -158,7 +158,7 @@ public class CharacterComboAttackState : CharacterAttackState
     public override void PlaySound()
     {
         var distance = (DataContainer.AudioListener.position - _stateMachine.Character.transform.position).magnitude;
-        if (distance < 0.1f)
+        if (distance < 1.0f)
             distance = 1.0f;
         else if (distance > 20.0f)
             return;
