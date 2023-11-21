@@ -12,33 +12,21 @@ namespace Inventory
 
     public class InventoryController : MonoBehaviour
     {
-
-
-        [SerializeField]
-        private List<InventoryItem> ItemList = new List<InventoryItem>();
+        [SerializeField] private List<InventoryItem> ItemList = new List<InventoryItem>();
+        [SerializeField] private InventorySO inventoryData;
         private UIInventoryPage inventoryUI;
 
-        [SerializeField]
-        private InventorySO inventoryData;
-
-        public List<InventoryItem> initialItems = new List<InventoryItem>();
-
-
-
-
-
-
+        public List<InventoryItem> initialItems = new();
 
         private void Start()
         {
-
             inventoryUI = UIManager.Instance.ShowUI<UIInventoryPage>(null, UIController.Instance.UIRoot);
 
             if (inventoryUI)
             {
-            UIController.Instance.InventoryUI = inventoryUI.gameObject;          
-            UIController.Instance.InventoryUI.SetActive(false);
-            UIController.Instance.BtnCancel = inventoryUI.CancleBtn;
+                UIController.Instance.InventoryUI = inventoryUI.gameObject;
+                UIController.Instance.InventoryUI.SetActive(false);
+                UIController.Instance.BtnCancel = inventoryUI.CancleBtn;
             }
             else
             {
@@ -48,6 +36,7 @@ namespace Inventory
             PrepareUI();
 
             AddItemsFromServer(DataManager.Instance.items);
+
             UIController.Instance.BtnInventory.onClick.AddListener(() =>
             {
                 SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
