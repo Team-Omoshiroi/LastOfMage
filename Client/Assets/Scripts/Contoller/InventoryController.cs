@@ -141,6 +141,7 @@ namespace Inventory
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
         }
+
         public void PerformAction(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
