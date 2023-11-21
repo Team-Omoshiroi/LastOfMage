@@ -118,6 +118,7 @@ public class UIInventoryPage : UIBase
 
     private void HandleBeginDrag(UIInventoryItem inventoryItemUI)
     {
+        SoundManager.Instance.Play("Effect/8-bit 16-bit Sound Effects/Select 1", eSoundType.PlayerEffect);
         int index = listOfUIItems.IndexOf(inventoryItemUI);
         if (index == -1)
         {
@@ -136,10 +137,12 @@ public class UIInventoryPage : UIBase
     }
     private void HandleItemSelection(UIInventoryItem inventoryItemUI)
     {
+      
         int index = listOfUIItems.IndexOf(inventoryItemUI);
         if (index == -1)
             return;
         OnDescriptionRequested?.Invoke(index);
+
     }
 
     public void Show()

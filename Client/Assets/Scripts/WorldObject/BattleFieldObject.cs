@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleFieldObject : MonoBehaviour
 {
-    private int objectId;
+    private int objectId = 0;
 
     /// <summary>
     /// 추후, set 과정에서 value 의 중복 여부를 판단하는 내용이 들어갈 것이다.
