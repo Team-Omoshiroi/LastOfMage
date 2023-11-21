@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Resources;
+using UnityEngine.Audio;
 
 public class SoundManager : CustomSingleton<SoundManager>
 {
     AudioSource[] _audioSources = new AudioSource[(int)eSoundType.MaxCount];
     Dictionary<string, AudioClip> _audioClips = new Dictionary<string, AudioClip>();
+    [Header("0 BGM, 1 Effect")]
+    [SerializeField] private List<AudioMixerGroup> Mixer;
 
     private void Awake()
     {
@@ -13,7 +16,9 @@ public class SoundManager : CustomSingleton<SoundManager>
         for (int i = 0; i < soundNames.Length - 1; i++)
         {
             GameObject go = new GameObject { name = soundNames[i] };
-            _audioSources[i] = go.AddComponent<AudioSource>();
+            var source = go.AddComponent<AudioSource>();
+            source.outputAudioMixerGroup = Mixer[i];
+            _audioSources[i] = source;
             go.transform.parent = gameObject.transform;
         }
 
@@ -102,6 +107,5 @@ public class SoundManager : CustomSingleton<SoundManager>
                 effectAudioSource.volume = volume;
                 break;
         }
-
     }
 }
