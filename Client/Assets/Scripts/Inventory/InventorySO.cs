@@ -124,6 +124,7 @@ public class InventorySO : ScriptableObject
     }
     public void RemoveItem(int itemIndex, int amount)
     {
+       
         if (inventoryItems.Count > itemIndex)
         {
             if (inventoryItems[itemIndex].IsEmpty)

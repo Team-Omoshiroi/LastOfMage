@@ -39,6 +39,7 @@ namespace Inventory
 
             UIController.Instance.BtnInventory.onClick.AddListener(() =>
             {
+                SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
                 if (inventoryUI.isActiveAndEnabled == false)
                 {
                     //_inventorypage = UIManager.Instance.ShowUI<UIInventoryPage>();  //ui매니져 사용해서 동적으로 껐다키기 
@@ -58,6 +59,7 @@ namespace Inventory
 
             UIController.Instance.BtnCancel.onClick.AddListener(() =>
             {
+                SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-cancel-1", eSoundType.PlayerEffect);
                 inventoryUI.Hide();
             });
         }
@@ -127,6 +129,7 @@ namespace Inventory
 
         private void DropItem(int itemIndex, int quantity)
         {
+           
             inventoryData.RemoveItem(itemIndex, quantity);
             inventoryUI.ResetSelection();
         }
@@ -204,6 +207,7 @@ namespace Inventory
             if (destroyableItem != null)
             {
                 inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
+
             }
         }
 

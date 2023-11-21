@@ -38,7 +38,7 @@ public class UIController: MonoBehaviour
         BtnLeavGame.onClick.AddListener(() =>
         {
 
-
+            SoundManager.Instance.Play("Effect/MenuSFX/Abstract/abs-confirm-1", eSoundType.PlayerEffect);
             LoadingScenController.LoadScene("LobbyScene");
             //if (leaveGame)
             //{
