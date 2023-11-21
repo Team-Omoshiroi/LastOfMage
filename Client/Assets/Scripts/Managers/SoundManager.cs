@@ -23,6 +23,7 @@ public class SoundManager : CustomSingleton<SoundManager>
         }
 
         _audioSources[(int)eSoundType.Bgm].loop = true;
+        _audioSources[(int)eSoundType.Ambient].loop = true;
     }
 
     public void Clear()
@@ -49,6 +50,7 @@ public class SoundManager : CustomSingleton<SoundManager>
         AudioSource audioSource;
         switch (type)
         {
+            case eSoundType.Ambient:
             case eSoundType.Bgm:
                 audioSource = _audioSources[(int)eSoundType.Bgm];
                 if (audioSource.isPlaying)
