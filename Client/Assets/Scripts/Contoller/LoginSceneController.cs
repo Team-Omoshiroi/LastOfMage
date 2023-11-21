@@ -14,9 +14,12 @@ public class LoginSceneController : MonoBehaviour
     [SerializeField] private Button buttonChae;
 
     [SerializeField] private Button BtnChangeScene;
+
+    [SerializeField] private string BGM;
     private void Start()
     {
         SetTempGuestLogin();
+        SoundManager.Instance.Play(BGM);
     }
 
     private void SetTempGuestLogin()
