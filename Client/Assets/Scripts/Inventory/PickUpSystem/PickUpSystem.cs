@@ -12,10 +12,10 @@ public class PickUpSystem : MonoBehaviour
 
         
         Item item = collision.GetComponent<Item>();
-        SoundManager.Instance.Play("Effect/8-bit 16-bit Sound Effects/Confirm 1", eSoundType.PlayerEffect);
+       
         if (item != null )
         {
-            
+            SoundManager.Instance.Play("Effect/8-bit 16-bit Sound Effects/Confirm 1", eSoundType.PlayerEffect);
             int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
             if (reminder == 0)
             {
