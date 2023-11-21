@@ -29,6 +29,13 @@ public class LoginSceneController : MonoBehaviour
         buttonSong.onClick.AddListener(() => { RequestPlayerInfo("song_123", 0); });
         buttonJo.onClick.AddListener(() => { RequestPlayerInfo("jo_123", 0); });
         buttonChae.onClick.AddListener(() => { RequestPlayerInfo("chae_123", 0); });
+
+        BtnChangeScene.onClick.AddListener(() => { LoadNextScene(); });
+    }
+
+    private void LoadNextScene()
+    {
+        LoadingScenController.LoadScene("LobbyScene");
     }
 
     private void RequestPlayerInfo(string playerName, int playerId)
